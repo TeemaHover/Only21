@@ -76,6 +76,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("/imgs/12-1.jpeg");
   background-size: cover;
+  background-position-x: center;
   background-repeat: no-repeat;
   font-family: "Lobster", cursive;
   font-weight: 400;
@@ -101,6 +102,34 @@ body {
   }
   p {
     font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-container {
+    flex-direction: column;
+  }
+  .right {
+    width: 90%;
+    margin-top: 5%;
+  }
+  .left {
+    width: 90%;
+    h1 {
+      font-size: 3em;
+      color: pink;
+    }
+    span {
+      color: pink;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+  video {
+    width: 30%;
   }
 }
 
@@ -174,5 +203,25 @@ body {
       transform: translatey(0%);
       visibility: visible;
     }
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    height: 200px;
+    > div {
+      flex: 0 0 50px;
+      border-radius: 0.5rem;
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+      box-shadow: 1px 5px 15px rgb(230, 164, 228);
+      position: relative;
+      overflow: hidden;
+    }
+  }
+  .typewriter {
+    font-size: 0.5em !important;
+  }
+  .content {
+    font-size: 0.5rem !important;
   }
 }
