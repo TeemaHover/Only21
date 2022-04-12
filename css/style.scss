@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --swiper-theme-color: pink !important;
+}
+
+.swiper {
+  width: 100vw;
+  height: 100vh;
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 50%;
+    border-radius: 10px;
+  }
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid pink; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end) infinite,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: pink;
+  }
+}
+
+.main-container {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5%;
+}
+.extra {
+  width: 50%;
+}
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/imgs/12-1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Lobster", cursive;
+  font-weight: 400;
+}
+.video-extra {
+  display: flex;
+  justify-content: space-around;
+}
+.last-one {
+  font-size: 3em;
+  font-family: "Lavishly Yours", cursive;
+}
+.left {
+  h1 {
+    font-size: 3em;
+    color: pink;
+  }
+  span {
+    color: pink;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 1.5em;
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  gap: 10px;
+
+  > div {
+    flex: 0 0 200px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px rgb(230, 164, 228);
+    position: relative;
+    overflow: hidden;
+
+    &:nth-of-type(1) {
+      background: url("/imgs/13.jpeg") no-repeat 50% / cover;
+    }
+    &:nth-of-type(2) {
+      background: url("/imgs/9.jpeg") no-repeat 50% / cover;
+    }
+    &:nth-of-type(3) {
+      background: url("/imgs/10.jpeg") no-repeat 50% / cover;
+    }
+    &:nth-of-type(4) {
+      background: url("/imgs/7.jpeg") no-repeat 50% / cover;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: pink !important;
+    }
+    .content {
+      font-size: 1.1rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(230, 164, 228);
+      background: linear-gradient(
+        0deg,
+        rgb(230, 164, 228) 0%,
+        rgba(230, 164, 228, 0) 100%
+      );
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+
+      span {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+    }
+
+    &:hover {
+      flex: 0 0 250px;
+      box-shadow: 1px 3px 15px #e6dff5;
+      transform: translatey(-30px);
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+  }
+}
