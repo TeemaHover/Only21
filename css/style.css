@@ -124,6 +124,7 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("/imgs/12-1.jpeg");
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/imgs/12-1.jpeg");
   background-size: cover;
+  background-position-x: center;
   background-repeat: no-repeat;
   font-family: "Lobster", cursive;
   font-weight: 400;
@@ -157,6 +158,38 @@ body {
 
 .left p {
   font-size: 1.5em;
+}
+
+@media screen and (max-width: 600px) {
+  .main-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .right {
+    width: 90%;
+    margin-top: 5%;
+  }
+  .left {
+    width: 90%;
+  }
+  .left h1 {
+    font-size: 3em;
+    color: pink;
+  }
+  .left span {
+    color: pink;
+  }
+  .left h2 {
+    font-size: 2em;
+  }
+  .left p {
+    font-size: 1em;
+  }
+  video {
+    width: 30%;
+  }
 }
 
 .container {
@@ -258,5 +291,30 @@ body {
   -webkit-transform: translatey(0%);
           transform: translatey(0%);
   visibility: visible;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    height: 200px;
+  }
+  .container > div {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50px;
+            flex: 0 0 50px;
+    border-radius: 0.5rem;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 5px 15px #e6a4e4;
+            box-shadow: 1px 5px 15px #e6a4e4;
+    position: relative;
+    overflow: hidden;
+  }
+  .typewriter {
+    font-size: 0.5em !important;
+  }
+  .content {
+    font-size: 0.5rem !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
